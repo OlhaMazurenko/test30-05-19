@@ -1,35 +1,21 @@
+'use strict';
 
-class Article {
-  constructor(title, author, text) {
-    this.title = title;
-    this.author = author;
-    this.text = text;
-  }
-  matches(query) {
-   return ((this.title).includes(query) || (this.text).includes(query) || (this.author).includes(query))
-    ? true 
-    : false;
-  }
-}
+ document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('article-list');
+  let l = new ArticleList(container);
+  l.render();
+  // let xhr = new XMLHttpRequest();
+  // xhr.open('GET', ' http://my-json-server.typicode.com/mate-academy/literary-blog/articles ');
+  // xhr.send();
+  // xhr.onload =  function() {
+  //   let data = JSON.parse(xhr.responseText);
+  //   let list = new ArticleList(container);
+  //   let oneArticle = new Article(element.title, element.author, element.text);
+  //   for (let d of data) {
+  //     list.addArticle(oneArticle);
+  //   }
+  //   list.render();
+  // }
+ });
 
-class ArticleList {
-  constructor(container) {
-    this.container = container;
-  }
-
-  addArticle(article) {
-    this.container.appendChild(article);
-
-  }
-  removeArticle(article) {
-    this.container.remove(article);
-
-  }
-
-  render(myTitle, myAuthor, myText) {
-    this.container.innerHTML = '';
-    this.container.innerHTML += `<div><h1>${myTitle}</h1><p>Autor: ${myAuthor}</p> <p>${myText}</p></div> `;
-  }
-}
-
-
+ 

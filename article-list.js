@@ -18,9 +18,9 @@ class ArticleList {
      //this.container.innerHtml = '';
      this.pList.forEach((element)=>{
         this.container.append(...`<article>
-        <h1>${element.title}</h1>
-        <p>${element.author}</p>
-        <p>${element.text}</p>
+        <h1>${element}</h1>
+        <p>${element}</p>
+        <p>${element}</p>
         </article>`);
    });
   }
